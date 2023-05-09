@@ -18,7 +18,7 @@ export class Commande {
   @Prop()
   montant_total: string;
   @Prop({ default: Date.now })
-  date_ajout: Date;
+  date_commande: Date;
 }
 
 export const CommandeSchema = SchemaFactory.createForClass(Commande);

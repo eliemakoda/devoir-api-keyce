@@ -1,0 +1,47 @@
+---
+openapi: 3.0.0
+info:
+  title: home-iot-api
+  description: l'api des etudiant de keyce informatique et IA
+  version: 3.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/ELIEMAKODAKOWO_1/api-keyce/3.0.0
+  description: bienvenue sur l'api créé par les etudiants de keyce informatique et IA
+paths:
+  /devices:
+    get:
+      tags:
+      - Device
+      description: retourne tous les appareils connecté
+      operationId: periphériques connecté
+      parameters:
+      - name: skip
+        in: query
+        description: number of records to skip
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      - name: limit
+        in: query
+        description: max number of records to return
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: tous les appareils
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: uri
+                  example: http://loclahost:3000
+components: {}
